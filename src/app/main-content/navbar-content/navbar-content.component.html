@@ -1,0 +1,56 @@
+<nav [class]="navbarClass">
+    <div class="logo">
+        <img src="assets/images/logo-nb2.png" class="my-logo">
+        <p>Pesic</p>
+    </div>
+
+    <div class="right-menu">
+        <button *ngIf="translationService.getCurrentLang() === 'en'" class="icon en-icon icon-core reference-icon"
+            (click)="switchLanguage()">EN</button>
+        <button *ngIf="translationService.getCurrentLang() === 'de'" class="icon de-icon icon-core reference-icon"
+            (click)="switchLanguage()">DE</button>
+
+        <div class="hamburger-menu core-page" (click)="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="menu" [ngClass]="{'open': isMenuOpen, 'closed': !isMenuOpen}">
+            <div class="close-menu">
+                <h2>{{ translationService.translate('menu') }}</h2>
+                <span (click)="closeMenu()">X</span>
+            </div>
+
+            <div class="menu-item" (mouseenter)="onMouseOver(0)" (mouseleave)="onMouseOut()">
+                <img *ngIf="showImageIndex === 0" src="assets/images/background-photo.png" class="reference-img">
+                <a routerLink="/#about" (click)="smoothScrollTo('about')">{{ translationService.translate('about')
+                    }}</a>
+            </div>
+
+            <div class="menu-item" (mouseenter)="onMouseOver(1)" (mouseleave)="onMouseOut()">
+                <img *ngIf="showImageIndex === 1" src="assets/images/background-photo.png" class="reference-img">
+                <a routerLink="/#core" (click)="smoothScrollTo('core')">{{ translationService.translate('skillset')
+                    }}</a>
+            </div>
+
+            <div class="menu-item" (mouseenter)="onMouseOver(2)" (mouseleave)="onMouseOut()">
+                <img *ngIf="showImageIndex === 2" src="assets/images/background-photo.png" class="reference-img">
+                <a routerLink="/#projects" (click)="smoothScrollTo('projects')">{{
+                    translationService.translate('projects') }}</a>
+            </div>
+
+            <div class="menu-item" (mouseenter)="onMouseOver(3)" (mouseleave)="onMouseOut()">
+                <img *ngIf="showImageIndex === 3" src="assets/images/background-photo.png" class="reference-img">
+                <a routerLink="/#othersay" (click)="smoothScrollTo('othersay')">{{
+                    translationService.translate('references') }}</a>
+            </div>
+
+            <div class="menu-item" (mouseenter)="onMouseOver(4)" (mouseleave)="onMouseOut()">
+                <img *ngIf="showImageIndex === 4" src="assets/images/background-photo.png" class="reference-img">
+                <a routerLink="/#contact" (click)="smoothScrollTo('contact')">{{
+                    translationService.translate('contactMe') }}</a>
+            </div>
+        </div>
+    </div>
+</nav>

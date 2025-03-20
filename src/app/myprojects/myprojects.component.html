@@ -1,0 +1,38 @@
+<section id="projects">
+    <app-navbar-content navbarClass="header2"></app-navbar-content>
+    <div class="text-about-projects">
+        <h1>{{ translationService.translate('my_work') }}</h1>
+        <p>{{ translationService.translate('explore_work') }}</p>
+    </div>
+
+    <div class="all-projects" [class.animate]="animate">
+        <div class="image-project" [ngStyle]="{'background-color': projects[currentIndex].color}">
+            <img src="assets/images/background-photo.png" class="background-photo">
+            <img [src]="projects[currentIndex].image" class="img-right">
+        </div>
+
+        <div class="text-project">
+            <div class="title-emoji">
+                <h2>{{projects[currentIndex].title}}</h2>
+                <img src="assets/images/correct.png" class="emoji-correct">
+            </div>
+            <p class="tech-stack">
+                <span *ngFor="let tech of projects[currentIndex].technologies">{{tech}} |</span>
+            </p>
+
+            <p class="description">
+                {{ getDescription(projects[currentIndex]) }}
+            </p>
+
+            <div class="buttons-projects">
+                <a *ngIf="projects[currentIndex].github"  [href]="projects[currentIndex].github" target="_blank" class="btn">GitHub <span class="arrow">→</span> </a>
+                <a *ngIf="projects[currentIndex].liveTest" [href]="projects[currentIndex].liveTest" target="_blank" class="btn">Live Test <span class="arrow">→</span></a>
+            </div>
+            
+            <div class="project-navigation">
+                <button (click)="previousProject()">{{ translationService.translate('previous_project') }}</button>
+                <button (click)="nextProject()">{{ translationService.translate('next_project') }}</button>
+            </div>
+        </div>
+    </div>
+</section>

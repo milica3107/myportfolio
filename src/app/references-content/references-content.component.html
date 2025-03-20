@@ -1,0 +1,20 @@
+<section id="othersay">
+    <app-navbar-content navbarClass="header2 reference-header"></app-navbar-content>
+
+    <h1>{{ translationService.translate('what_my_colleagues_say') }}</h1>
+
+    <div class="references">
+        <div *ngFor="let reference of references; let i = index" class="comment step-{{ i }}"
+            (mouseover)="onMouseOver(i)" (mouseout)="onMouseOut(i)">
+            <div class="comment-header">
+                <h2>{{ reference.name }}</h2>
+                <img *ngIf="reference.showImage" src="assets/images/background-photo.png" class="reference-img">
+            </div>
+            <p> {{ getDescription(reference) }}</p>
+            <span>{{ reference.role }}</span>
+            <div class="linkedin">
+                <p> {{ reference.profileLink }} </p>
+            </div>
+        </div>
+    </div>
+</section>

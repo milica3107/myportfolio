@@ -1,0 +1,899 @@
+* {
+    font-family: "Quicksand";
+    font-family: "Eczar";
+}
+
+section {
+    background-color: #1D1D1D;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    margin: 0;
+    //height: 125vh;
+    overflow: hidden;
+
+    .about-me-content {
+        display: flex;
+        align-items: center;
+        color: #F8F7E5;
+        gap: 22rem;
+        padding: 0 72px;
+
+        .my-photo-second-content {
+            width: 500px;
+            border-radius: 2%;
+        }
+
+        h1 {
+            position: relative;
+            bottom: 16rem;
+            font-size: 65px;
+            font-family: "Eczar";
+        }
+    }
+
+    .text-about-me {
+        color: #F8F7E5;
+        width: 567px;
+        border-radius: 4px;
+        padding: 32px;
+        background-color: #213830;
+        position: relative;
+        left: 36%;
+        bottom: 28rem;
+
+        p {
+            font-size: 16px;
+            line-height: 19.2px;
+            font-weight: 400;
+            font-family: "Quicksand";
+        }
+
+
+        .button-about-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 26px;
+
+            .btn-talk {
+                width: 165px;
+                border-radius: 30px;
+                border: 1px solid #F8F7E5;
+                cursor: pointer;
+                background-color: #213830;
+                color: #F8F7E5;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 21.6px;
+                height: 40px;
+                font-family: "Quicksand";
+
+                &:hover {
+                    background-color: #FF834F;
+                }
+            }
+
+            .emoji {
+                transition: transform 0.3s ease;
+                animation: floatAnimation 1s ease-in-out infinite;
+
+                &:hover {
+                    animation: none;
+                }
+            }
+
+            @keyframes floatAnimation {
+                0% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            .popup {
+                display: flex;
+                position: absolute;
+                left: 50%;
+                background-color: #FF834F;
+                color: black;
+                padding: 15px;
+                border-radius: 5px;
+                width: 315px;
+                font-size: 14px;
+                z-index: 10;
+                flex-direction: column;
+                height: 225px;
+                bottom: -11rem;
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                animation: slideUp 0.3s ease-out;
+
+                @keyframes slideUp {
+                    0% {
+                        transform: translateY(20px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                .close-popup {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 47px;
+
+                    h2 {
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 28.8px;
+                        font-family: "Quicksand";
+                    }
+
+                    .closepopup {
+                        display: none;
+                    }
+                }
+
+                .showingPopup {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+                    font-family: "Quicksand";
+
+                    h2 {
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 28.8px;
+                        font-family: "Quicksand";
+                    }
+
+                    .item {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        height: 19px;
+                    }
+
+                    .check-circle {
+                        border-radius: 50%;
+                        background-color: #F8F7E5;
+                        color: #213830;
+                        font-weight: bold;
+                        width: 16px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 2596px) and (min-width: 1900px) {
+    section {
+        .about-me-content {
+            .my-photo-second-content {
+                margin-left: 10rem;
+            }
+
+            h1 {
+                font-size: 70px;
+            }
+        }
+
+        .text-about-me {
+            width: 959px;
+
+            p {
+                font-size: 20px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+                .popup {
+                    width: 370px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1889px) {
+    section {
+        .about-me-content {
+            width: 1666px;
+            height: 700px;
+
+            .my-photo-second-content {
+                width: 600px;
+                margin-left: 10rem;
+            }
+        }
+
+        .text-about-me {
+            left: 50%;
+        }
+    }
+}
+
+@media (max-width: 1550px) and (min-width: 1450px) {
+    section {
+        .about-me-content {
+            width: unset;
+            height: unset;
+            gap: 10rem;
+
+            .my-photo-second-content {
+                margin-left: 5rem;
+                width: 450px;
+
+                h1 {
+                    right: 10rem;
+                }
+            }
+        }
+
+        .text-about-me {
+            left: 45%;
+
+            .button-about-me {
+                .popup {
+                    left: 45%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1449px) {
+    section {
+        .about-me-content {
+            width: unset;
+            height: unset;
+            gap: 5rem;
+
+            .my-photo-second-content {
+                margin-left: 0;
+
+                h1 {
+                    right: 10rem;
+                }
+            }
+        }
+
+        .text-about-me {
+            left: 45%;
+
+            .button-about-me {
+                .popup {
+                    left: 45%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1155px) {
+    section {
+        .about-me-content {
+            img {
+                width: 500px;
+            }
+
+            h1 {
+                font-size: 55px;
+            }
+        }
+
+        .text-about-me {
+            bottom: 15rem;
+            width: 500px;
+
+            .button-about-me {
+                .popup {
+                    left: 38%;
+                    bottom: -11rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    section {
+        height: 1500px;
+        .about-me-content {
+            gap: 0;
+
+            h1 {
+                font-size: 45px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 320px) {
+    app-navbar-content {
+        display: none;
+    }
+}
+
+@media (max-width: 1035px) and (min-width: 650px) {
+    section {
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+
+            .my-photo-second-content {
+                width: 500px;
+            }
+        }
+
+        .text-about-me {
+            bottom: 3rem;
+            left: 20%;
+
+            .button-about-me {
+                .popup {
+                    left: 0;
+                    bottom: -12rem;
+                    width: 357px;
+                    height: 255px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    section {
+        height: 1300px;
+    }
+}
+
+@media (max-width: 930px) {
+    section {
+       // height: 100vh;
+        .about-me-content {
+            h1 {
+                font-size: 50px;
+                bottom: 10rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) and (min-width: 800px) {
+    section {
+        height: 110vh;
+
+        .about-me-content {
+            padding: 20px;
+        }
+    }
+}
+
+@media (max-width: 799px) and (min-width: 750px) {
+    section {
+        height: 1300px;
+
+        .about-me-content {
+            padding: 20px;
+
+            h1 {
+                right: 3rem;
+                bottom: 10rem;
+                font-size: 40px;
+            }
+        }
+
+        .text-about-me {
+            left: 5rem;
+
+            .button-about-me {
+                .popup {
+                    width: unset;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 749px) and (min-width: 700px) {
+    section {
+        .about-me-content {
+            padding: 20px;
+
+            h1 {
+                right: 3rem;
+                font-size: 42px;
+                bottom: 10rem;
+            }
+        }
+
+        .text-about-me {
+            left: 5rem;
+
+            .button-about-me {
+                .popup {
+                    width: 290px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 699px) and (min-width: 650px) {
+    section {
+        .about-me-content {
+            padding: 20px;
+
+            h1 {
+                right: 3rem;
+                font-size: 42px;
+                bottom: 10rem;
+                text-align: center;
+            }
+        }
+
+        .text-about-me {
+            left: 3rem;
+            width: 500px;
+
+            .button-about-me {
+                .popup {
+                    width: 290px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 649px) and (min-width: 550px) {
+    section {
+        height: 1600px;
+        align-items: center;
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+            width: 465px;
+            padding: 34px 48px;
+            flex-direction: column-reverse;
+
+            h1 {
+                font-size: 42px;
+                text-align: center;
+                position: unset;
+            }
+
+            .my-photo-second-content {
+                width: 450px;
+            }
+        }
+
+        .text-about-me {
+            left: 0;
+            width: 420px;
+            bottom: 0;
+
+            p {
+                font-size: 18px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+                .popup {
+                    left: 2rem;
+                    bottom: -12rem;
+                    width: 290px;
+                    height: 246px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 549px) and (min-width: 500px) {
+    section {
+        height: 1600px;
+        align-items: center;
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+            width: 465px;
+            padding: 32px 38px;
+            flex-direction: column-reverse;
+
+            h1 {
+                font-size: 42px;
+                text-align: center;
+                position: unset;
+            }
+
+            .my-photo-second-content {
+                width: 450px;
+            }
+        }
+
+        .text-about-me {
+            left: 0;
+            width: 420px;
+            bottom: 1rem;
+
+            p {
+                font-size: 18px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+
+                .popup {
+                    left: 2rem;
+                    bottom: -12rem;
+                    width: 290px;
+                    height: 246px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 15px;
+
+                        .item {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 499px) and (min-width: 450px) {
+    section {
+        height: 1600px;
+        align-items: center;
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+            width: 450px;
+            padding: 32px 12px;
+            flex-direction: column-reverse;
+
+            h1 {
+                font-size: 42px;
+                text-align: center;
+                position: unset;
+            }
+
+            .my-photo-second-content {
+                width: 450px;
+            }
+        }
+
+        .text-about-me {
+            left: 0;
+            width: 350px;
+            bottom: 1rem;
+
+            p {
+                font-size: 18px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+                .popup {
+                    left: 2rem;
+                    bottom: -12rem;
+                    width: 290px;
+                    height: 246px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 15px;
+
+                        .item {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 449px) and (min-width: 400px) {
+    section {
+        height: 1600px;
+        align-items: center;
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+            width: 450px;
+            padding: 32px 12px;
+            flex-direction: column-reverse;
+
+            h1 {
+                font-size: 42px;
+                text-align: center;
+                position: unset;
+            }
+
+            .my-photo-second-content {
+                width: 350px;
+            }
+        }
+
+        .text-about-me {
+            left: 0;
+            width: 300px;
+            bottom: 1rem;
+
+            p {
+                font-size: 18px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+
+                .popup {
+                    left: 1rem;
+                    bottom: -12rem;
+                    width: 290px;
+                    height: 246px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 15px;
+
+                        .item {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 399px) and (min-width: 350px) {
+    section {
+        height: 1800px;
+        align-items: center;
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+            width: 380px;
+            padding: 32px 12px;
+            flex-direction: column-reverse;
+
+            h1 {
+                font-size: 42px;
+                text-align: center;
+                position: unset;
+            }
+
+            .my-photo-second-content {
+                width: 350px;
+            }
+        }
+
+        .text-about-me {
+            left: 0;
+            width: 250px;
+            bottom: 1rem;
+
+            p {
+                font-size: 18px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+                gap: 10px;
+
+                .popup {
+                    left: 0;
+                    bottom: -12rem;
+                    width: 290px;
+                    height: 246px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 15px;
+
+                        .item {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 349px) and (min-width: 319px) {
+    section {
+        height: 1800px;
+        align-items: center;
+
+        .about-me-content {
+            gap: 0;
+            justify-content: center;
+            width: 380px;
+            padding: 32px 12px;
+            flex-direction: column-reverse;
+
+            h1 {
+                font-size: 42px;
+                text-align: center;
+                position: unset;
+            }
+
+            .my-photo-second-content {
+                width: 350px;
+            }
+        }
+
+        .text-about-me {
+            left: 0;
+            width: 250px;
+            bottom: 1rem;
+
+            p {
+                font-size: 18px;
+                line-height: unset;
+            }
+
+            .button-about-me {
+                gap: 10px;
+
+                .popup {
+                    left: 0;
+                    bottom: -12rem;
+                    width: 290px;
+                    height: 246px;
+                    gap: 10px;
+
+                    .close-popup {
+                        h2 {
+                            font-size: 23px;
+                        }
+
+                        .closepopup {
+                            display: block !important;
+                            font-size: 23px;
+                            font-family: "Quicksand";
+                        }
+                    }
+
+                    .showingPopup {
+                        left: unset;
+                        bottom: unset;
+                        gap: 15px;
+
+                        .item {
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

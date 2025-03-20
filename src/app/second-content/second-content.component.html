@@ -1,0 +1,45 @@
+<section id="about">
+    <app-navbar-content navbarClass="header2"></app-navbar-content>
+    <div class="about-me-content">
+        <img src="assets/images/photo2.png" class="my-photo-second-content">
+        <h1>{{ translationService.translate('about_me') }}</h1>
+    </div>
+
+    <div class="text-about-me">
+        <p>{{ translationService.translate('about_text_line_1') }}</p>
+        <p>{{ translationService.translate('about_text_line_2') }}</p>
+        <p>{{ translationService.translate('about_text_line_3') }}</p>
+        <p>{{ translationService.translate('about_text_line_4') }}</p>
+
+        <div class="button-about-me">
+            <button class="btn-talk" (click)="scrollToContact()">{{ translationService.translate('let_s_talk') }}</button>
+            <img src="assets/images/emoji-secret.png" class="emoji" (mouseover)="showPopup = true"
+                (mouseleave)="showPopup = false">
+
+            <div *ngIf="showPopup" class="popup" [ngClass]="{'open': isPopupOpen, 'closed': !isPopupOpen}">
+                <div class="close-popup">
+                    <h2>{{ translationService.translate('more_about_me') }}</h2>
+                    <span (click)="closeMenu()" class="closepopup">X</span>
+                </div>
+
+                <div class="showingPopup">
+                    <div class="item"><span class="check-circle">✓</span>
+                        <p>{{ translationService.translate('team_player') }}</p>
+                    </div>
+                    <div class="item"><span class="check-circle">✓</span>
+                        <p>{{ translationService.translate('based_in') }}</p>
+                    </div>
+                    <div class="item"><span class="check-circle">✓</span>
+                        <p>{{ translationService.translate('always_learning') }}</p>
+                    </div>
+                    <div class="item"><span class="check-circle">✓</span>
+                        <p>{{ translationService.translate('loves_new_challenges') }}</p>
+                    </div>
+                    <div class="item"><span class="check-circle">✓</span>
+                        <p>{{ translationService.translate('collaborative_mindset') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+<section id="core">
+    <app-navbar-content navbarClass="header2 core-header"></app-navbar-content>
+    <h1>{{ translationService.translate('core') }}</h1>
+    <div class="core-container">
+        <div class="text-core-container">
+            <p>{{ translationService.translate('core_text') }}</p>
+            <p>{{ translationService.translate('core_text1') }}</p>
+        </div>
+    </div>
+
+    <div class="skills-container">
+       <img src="assets/images/HTML.png"> 
+       <img src="assets/images/CSS.png">
+       <img src="assets/images/JS.png">
+       <img src="assets/images/TS.png">
+       <img src="assets/images/angular.png">
+       <img src="assets/images/firebase.png">
+       <img src="assets/images/git.png">
+    </div>
+
+    <div class="skills-images">
+        <img src="assets/images/skills-background.png" class="scroll-skills">
+        <img src="assets/images/skills.png" class="skills-emoji" (mouseover)="showSkills = true"
+        (mouseleave)="showSkills = false">
+
+        <div *ngIf="showSkills" class="new-skills-container" [ngClass]="{'open': isPopupOpen, 'closed': !isPopupOpen}">
+            <span (click)="closeMenu()" class="close-container">X</span>
+            <h2>{{ translationService.translate('dont_see_skill') }}</h2>
+            <p>{{ translationService.translate('contact_me') }} </p>
+        </div>
+        
+
+    </div>
+
+</section>

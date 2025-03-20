@@ -1,0 +1,8 @@
+<app-main-content *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-main-content>
+<app-dot-navigation *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-dot-navigation>
+<app-second-content *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-second-content>
+<app-core-content *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-core-content>
+<app-myprojects *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-myprojects>
+<app-references-content *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-references-content>
+<app-contact-form *ngIf="currentRoute !== '/impressum' && currentRoute !== '/privacy-policy'"></app-contact-form>
+<router-outlet></router-outlet>

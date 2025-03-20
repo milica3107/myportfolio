@@ -1,0 +1,287 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url("../../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+    font-family: "Quicksand";
+}
+
+html {
+    scrollbar-color: #f39c12 #414040;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #414040;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f39c12;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f39c12;
+}
+
+section {
+    background-color: #213830;
+    color: #F8F7E5;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    margin: 0;
+    font-family: "Quicksand";
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // height: 88px;
+        padding: 24px 72px 24px;
+        background-color: #213830;
+        font-family: "Quicksand";
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 46px;
+            gap: 20px;
+            margin-right: 8rem;
+
+            p {
+                font-size: 30px;
+                color: #F8F7E5;
+                font-family: "Quicksand";
+            }
+        }
+
+        .language {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                font-weight: bold;
+                font-family: "Quicksand";
+                color: #F8F7E5;
+                background-color: #213830;
+                border-radius: 50%;
+                border: 1px solid #F8F7E5;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #FF834F;
+                }
+
+                .en-icon {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 18px;
+                    font-family: "Quicksand";
+                }
+
+            }
+        }
+    }
+
+    .privacy-policy-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 40px;
+        max-height: 90vw;
+        overflow-y: auto;
+
+        .text-and-return {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .arrow-left {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                text-decoration: none;
+                text-align: center;
+                height: 40px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 50%;
+                background-color: #213830;
+                color: #F8F7E5;
+                border: 1px solid #F8F7E5;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #FF834F;
+                }
+            }
+
+            h1 {
+                color: #FF834F;
+                font-size: 35px;
+            }
+        }
+
+        .text-container {
+            p {
+                font-size: 17px;
+            }
+
+            h2 {
+                color: #FF834F;
+                font-size: 25px;
+            }
+
+            h3 {
+                color: #FF834F;
+            }
+
+            h4 {
+                color: #FF834F;
+
+            }
+
+            a {
+                color: #f3966f;
+                text-decoration: underline;
+            }
+        }
+
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #F8F7E5;
+
+            h2 {
+                font-size: 20px;
+                font-weight: 400;
+                font-family: "Quicksand";
+            }
+
+            .footer-right {
+                gap: 20px;
+                display: flex;
+
+                a {
+                    font-family: "Quicksand";
+                    text-decoration: none;
+                    color: #F8F7E5;
+
+                    &:hover {
+                        color: #FF834F;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    section {
+        .privacy-policy-container {
+            max-height: 74vw;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    section {
+        .privacy-policy-container {
+            max-height: 92vw;
+        }
+    }
+}
+
+@media (max-width: 915px) {
+    section {
+        .privacy-policy-container {
+            max-height: 82vw;
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    section {
+        .privacy-policy-container {
+            max-height: 94vw;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        .privacy-policy-container {
+            max-height: unset;
+        }
+
+        .footer {
+            h2 {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) and (min-width: 346px) {
+    section {
+        .header {
+            justify-content: center;
+        }
+
+        .privacy-policy-container {
+            .footer {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (max-width: 490px) {
+    section {
+        .privacy-policy-container {
+            .text-and-return {
+                flex-direction: column-reverse;
+
+                h1 {
+                    font-size: 30px;
+                }
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (max-width: 345px) and (min-width: 317px) {
+    section {
+        .header {
+            justify-content: center;
+            gap: 50px;
+
+            .logo {
+                margin-right: unset;
+            }
+        }
+    }
+}

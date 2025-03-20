@@ -1,0 +1,80 @@
+<section>
+  <nav class="header">
+    <div class="logo">
+      <img src="./assets/images/logo-nb2.png" class="my-logo">
+      <p>Pesic</p>
+    </div>
+
+    <div class="language">
+      <button class="icon en-icon" (click)="switchLanguage('en')">EN</button>
+      <button class="icon de-icon" (click)="switchLanguage('de')">DE</button>
+    </div>
+  </nav>
+
+  <div class="impressum-container">
+    <div class="text-and-return">
+      <h1>{{ translationService.translate('IMPRINT') }}</h1>
+      <button class="arrow-left" (click)="goToHome()">←</button>
+    </div>
+
+    <div class="text-container">
+      <p>{{ translationService.translate('INFO') }}</p>
+      <p>Milica Pesic<br>
+        Calwerstraße 7<br>
+        72076 Tübingen<br></p>
+
+      <p>
+        <span><strong>{{ translationService.translate('REPRESENTED_BY') }}</strong></span> <br><br>
+        Milica Pesic<br>
+      </p>
+
+      <p>
+        <span><strong>{{ translationService.translate('CONTACT') }}</strong></span> <br><br>
+        {{ translationService.translate('PHONE') }} +49 17689075213 <br>
+        {{ translationService.translate('EMAIL') }} <a
+          href="mailto:milicapesic314&#64;gmail.com">milicapesic314&#64;gmail.com</a>
+      </p>
+
+
+      <span><strong>{{ translationService.translate('LIABILITY_TITLE') }}</strong></span><br>
+      <p> {{ translationService.translate('LIABILITY_CONTENT1') }}<br>
+        {{ translationService.translate('LIABILITY_CONTENT2') }}<br>
+        {{ translationService.translate('LIABILITY_CONTENT3') }}<br>
+        {{ translationService.translate('LIABILITY_CONTENT4') }}
+        {{ translationService.translate('LIABILITY_CONTENT5') }}<br>
+        {{ translationService.translate('LIABILITY_CONTENT6') }}
+      </p>
+
+      <span><strong>{{ translationService.translate('LIABILITY_LINKS_TITLE') }}</strong></span><br>
+      <p> {{ translationService.translate('LIABILITY_LINKS_TEXT1') }}
+        {{ translationService.translate('LIABILITY_LINKS_TEXT2') }}<br>
+        {{ translationService.translate('LIABILITY_LINKS_TEXT3') }}<br>
+        {{ translationService.translate('LIABILITY_LINKS_TEXT4') }}
+        {{ translationService.translate('LIABILITY_LINKS_TEXT5') }}
+        {{ translationService.translate('LIABILITY_LINKS_TEXT6') }}<br>
+        {{ translationService.translate('LIABILITY_LINKS_TEXT7') }}
+      </p>
+
+      <span><strong>{{ translationService.translate('COPYRIGHT_TITLE') }}</strong></span><br>
+      <p>{{ translationService.translate('COPYRIGHT_TEXT1') }}<br>
+        {{ translationService.translate('COPYRIGHT_TEXT2') }}<br>
+        {{ translationService.translate('COPYRIGHT_TEXT3') }}
+        {{ translationService.translate('COPYRIGHT_TEXT4') }}
+        {{ translationService.translate('COPYRIGHT_TEXT5') }}<br>
+        {{ translationService.translate('COPYRIGHT_TEXT6') }}
+        {{ translationService.translate('COPYRIGHT_TEXT7') }}
+      </p>
+      <div class="impressum-link">
+        <h3>{{ translationService.translate('IMPRINT_GENERATOR') }}</h3><a
+          href="https://websitewissen.com">impressum-generator.de</a>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>© Milica Pesic 2025</h2>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/milicapesic-mp" target="_blank">Linkedin</a>
+        <a href="https://github.com/milica3107" target="_blank">Github</a>
+      </div>
+    </div>
+  </div>
+</section>

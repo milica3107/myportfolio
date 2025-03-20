@@ -1,0 +1,12 @@
+<div class="dot-navigation">
+  <div class="arrow-up" *ngIf="activeIndex === sections.length - 1 || sections[activeIndex].id === 'contact'" (click)="scrollToTop()">
+    ↑
+  </div>
+  <div class="dot" *ngFor="let section of sections; let i = index" 
+    [class.active]="activeIndex === i"
+    [class.ellipse]="activeIndex === i" 
+    [class.core]="isCoreCompetence && activeIndex !== i"
+    [class.core-active]="isCoreCompetence && activeIndex === i"
+    (click)="setActiveSection(i)">
+  </div>
+</div>

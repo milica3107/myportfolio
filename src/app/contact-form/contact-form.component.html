@@ -1,0 +1,88 @@
+<section id="contact">
+    <app-navbar-content navbarClass="header2"></app-navbar-content>
+    <div class="contact-container">
+        <div class="title-contact">
+            <h1>{{ translationService.translate('lets_build_together') }}</h1>
+
+            <div class="contact-me">
+                <h2>{{ translationService.translate('do_you_have_problem') }}</h2>
+                <p>{{ translationService.translate('contact_intro') }}</p>
+            </div>
+        </div>
+
+        <div class="contact-form step-1">
+            <div *ngIf="showMessage" class="success-message">
+                {{ translationService.translate('thank_you_message') }}
+            </div>
+
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <div class="first-input-group">
+                    <div class="input-group" [ngClass]="{'error': showNameError}" (click)="focusInput('name')">
+                        <label for="name" (click)="onLabelClick('name')">{{
+                            translationService.translate('whats_your_name') }}</label>
+                        <input type="text" id="name"
+                            [placeholder]="showNameError ? '' : translationService.translate('your_name_placeholder')"
+                            name="name" [(ngModel)]="name" #nameInput="ngModel" required (focus)="onInputFocus('name')"
+                            (blur)="onInputBlur('name')">
+                        <div *ngIf="showNameError" class="error-message">
+                            {{ translationService.translate('name_error') }}
+                        </div>
+                    </div>
+
+                    <div class="input-group-mail" [ngClass]="{'error': showEmailError}" (click)="focusInput('email')">
+                        <label for="email" (click)="onLabelClick('email')">{{
+                            translationService.translate('whats_your_email') }}</label>
+                        <input type="email" id="email"
+                            [placeholder]="showEmailError ? '' : translationService.translate('email_placeholder')"
+                            name="email" [(ngModel)]="email" #emailInput="ngModel" required
+                            (focus)="onInputFocus('email')" (blur)="onInputBlur('email')" pattern=".+@.+\..+">
+                        <div *ngIf="showEmailError" class="error-message-mail">
+                            {{ translationService.translate('email_error') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="input-help" [ngClass]="{'error': showMessageError}" (click)="focusInput('message')">
+                    <label for="message">{{ translationService.translate('how_can_i_help') }}</label>
+                    <input type="text" id="message" name="message" [(ngModel)]="message" #messageInput="ngModel"
+                        [placeholder]="showMessageError  ? '' : translationService.translate('message_placeholder')"
+                        required (focus)="onInputFocus('message')" (blur)="onInputBlur('message')">
+                    <div *ngIf="showMessageError" class="error-message">
+                        {{ translationService.translate('message_error') }}
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="privacy" #privacy name="privacyAccepted" (change)="toggleButton()"
+                        required>
+                    <label for="privacy">{{ translationService.translate('privacy_police1') }}
+                        <a [routerLink]="['/privacy-policy']">{{ translationService.translate('privacy_police2') }} </a>
+                        {{ translationService.translate('privacy_police3') }}
+                    </label>
+                </div>
+
+                <div *ngIf="showPrivacyMessage" class="privacy-message">
+                    {{ translationService.translate('accept_privacy_policy') }}
+                </div>
+
+                <button type="submit" [ngClass]="{ 'active': isChecked }" [disabled]="!isChecked">
+                    {{ translationService.translate('drop_a_line') }}</button>
+            </form>
+            <div class="footer">
+                <h2>© Milica Pesic 2025</h2>
+                <div class="footer-right">
+                    <a [routerLink]="['/impressum']">{{ translationService.translate('IMPRINT') }}</a>
+                    <a href="https://www.linkedin.com/in/milicapesic-mp" target="_blank">Linkedin</a>
+                    <a href="https://github.com/milica3107" target="_blank">Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="figure-contact">
+        <div class="one-figure">
+            <img src="assets/images/background-photo.png">
+        </div>
+
+        <div class="two-figure">
+            <img src="assets/images/background-contact.png">
+        </div>
+    </div>
+</section>
